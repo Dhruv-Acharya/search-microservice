@@ -14,13 +14,12 @@ public class Product {
     private String imageUrl;
     private double rating;
     private double ratingCounter;
-    private double lowestPrice;
-    private double highestPrice;
+    private String priceRange;
 
     public Product() {
     }
 
-    public Product(String productId, String name, String usp, String description, String imageUrl, double rating, double ratingCounter, double lowestPrice, double highestPrice) {
+    public Product(String productId, String name, String usp, String description, String imageUrl, double rating, double ratingCounter, String priceRange) {
         this.productId = productId;
         this.name = name;
         this.usp = usp;
@@ -28,8 +27,7 @@ public class Product {
         this.imageUrl = imageUrl;
         this.rating = rating;
         this.ratingCounter = ratingCounter;
-        this.lowestPrice = lowestPrice;
-        this.highestPrice = highestPrice;
+        this.priceRange = priceRange;
     }
 
     public String getProductId() {
@@ -88,19 +86,11 @@ public class Product {
         this.ratingCounter = ratingCounter;
     }
 
-    public double getLowestPrice() {
-        return lowestPrice;
+    public String getPriceRange() {
+        return priceRange;
     }
 
-    public void setLowestPrice(double lowestPrice) {
-        this.lowestPrice = lowestPrice;
-    }
-
-    public double getHighestPrice() {
-        return highestPrice;
-    }
-
-    public void setHighestPrice(double highestPrice) {
-        this.highestPrice = highestPrice;
+    public void setPriceRange(String priceRange) {
+        this.priceRange = priceRange;
     }
 }

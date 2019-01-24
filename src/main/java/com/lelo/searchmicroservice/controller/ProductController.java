@@ -26,6 +26,7 @@ public class ProductController {
     public ResponseEntity<String> addProduct(@RequestBody ProductDTO productDTO){
         Product product = new Product();
         BeanUtils.copyProperties(productDTO, product);
+        product.setPriceRange(productDTO.getLowestPrice() + " - " + productDTO.getHighestPrice());
         Product productCreated  = productService.add(product);
         return new ResponseEntity<String>(productCreated.getProductId(),HttpStatus.CREATED);
     }
